@@ -29,4 +29,3 @@ password:qwe123
 
 user:player2
 password:qwe123
->>>>>>> master
