@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "db68a8d2-9c2f-457e-b469-087059bd38e4",
+		"name": "battle-movies",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14710623"
+	},
+	"item": [
+		{
+			"name": "start game",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"player1\",\r\n    \"password\":\"qwe123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/match/start",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"match",
+						"start"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "finish game",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwbGF5ZXIxIiwiaWF0IjoxNzA2NTQ4OTEzLCJleHAiOjE3MDY1NTI1MTN9.fdIbfcDGgfoSJShUDehvYF0LHmHSnaeafM1lbopjUpA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/match/finish",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"match",
+						"finish"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get quiz",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwbGF5ZXIxIiwiaWF0IjoxNzA2NTQwOTA1LCJleHAiOjE3MDY1NDQ1MDV9.gzH1PapBQ7TYkReFUJ4d-fvsMW3t1hi8aVgNBmUYnQE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quiz",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quiz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reply Quiz",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwbGF5ZXIxIiwiaWF0IjoxNzA2NTQwOTA1LCJleHAiOjE3MDY1NDQ1MDV9.gzH1PapBQ7TYkReFUJ4d-fvsMW3t1hi8aVgNBmUYnQE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"matchId\" : 2,\r\n    \"quizId\" : 4,\r\n    \"selectedMovieId\" : \"tt0000040\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/quiz",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quiz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get ranking",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwbGF5ZXIyIiwiaWF0IjoxNzA2NTQ4MDg1LCJleHAiOjE3MDY1NTE2ODV9.g7vL1UjhiJzkyddrD4NVX6cDgbb7k7d7T3Lg9xkwkAY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ranking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ranking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get movie - IMDB",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://www.omdbapi.com/?i=tt0000009&apikey=7b2e5f95&type=movie&r=json&plot=short",
+					"protocol": "http",
+					"host": [
+						"www",
+						"omdbapi",
+						"com"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "i",
+							"value": "tt0000009"
+						},
+						{
+							"key": "apikey",
+							"value": "7b2e5f95"
+						},
+						{
+							"key": "type",
+							"value": "movie"
+						},
+						{
+							"key": "r",
+							"value": "json"
+						},
+						{
+							"key": "s",
+							"value": "a",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "t",
+							"value": "a",
+							"disabled": true
+						},
+						{
+							"key": "plot",
+							"value": "short"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
