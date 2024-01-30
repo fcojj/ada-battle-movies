@@ -31,7 +31,9 @@ public class MovieService {
         var movieImdbId = generateMovieImdbId();
 
         try {
-            return restTemplate.getForEntity(omdbApiUrl, MovieBO.class, movieImdbId).getBody();
+            var response = restTemplate.getForEntity(omdbApiUrl, MovieBO.class, movieImdbId);
+
+            return response.getBody();
         } catch (Exception ex){
             var errorMessage = String.format("Error when tried to retrieve the %s movie from OMDb API. %s", movieImdbId, ex.getMessage());
 

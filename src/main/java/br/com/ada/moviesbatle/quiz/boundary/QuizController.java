@@ -58,13 +58,14 @@ public class QuizController {
     @ApiResponse(responseCode = "400", description = "Invalid request. There are inconsistencies in your request.", content = {@Content(mediaType = "application/json")})
     @PostMapping
     @CrossOrigin
-    public QuizAnswerDTO answerQuiz(@Valid @RequestBody QuizAnswerRequestDTO quizAnswerRequestDTO, HttpServletRequest request) {
+    public QuizAnswerDTO answerQuiz(@Valid @RequestBody QuizAnswerRequestDTO quizAnswerRequestDTO,
+                                    HttpServletRequest request) {
         var token = extractTokenFromRequest(request);
 
         quizValidator.validateQuizAnswerInputs(quizAnswerRequestDTO.getMatchId(),
-                quizAnswerRequestDTO.getQuizId(),
-                quizAnswerRequestDTO.getSelectedMovieId(),
-                token);
+                                               quizAnswerRequestDTO.getQuizId(),
+                                               quizAnswerRequestDTO.getSelectedMovieId(),
+                                               token);
 
         var quizAnswerBO = quizService.processQuizAnswer(quizAnswerRequestDTO.getQuizId(),
                                                          quizAnswerRequestDTO.getSelectedMovieId(),

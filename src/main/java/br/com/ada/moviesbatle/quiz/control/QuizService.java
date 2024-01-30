@@ -54,7 +54,7 @@ public class QuizService {
         var quiz = quizRepository.getReferenceById(quizId);
         var match = quiz.getMatch();
         var hit = false;
-        //var amountErrors = match.getAmountError();
+
         match.setPendingQuiz(false);
         quiz.setActive(false);
 
@@ -69,7 +69,7 @@ public class QuizService {
                 tokenBlackListService.addToBlacklist(token);
             }
         }
-        //quiz.setMatch(match);
+
         quizRepository.save(quiz);
 
         return new QuizAnswerBO(hit, match.getAmountError(), match.isFinished());

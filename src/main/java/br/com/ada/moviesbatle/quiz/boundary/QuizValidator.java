@@ -27,7 +27,7 @@ public class QuizValidator {
 
         /**
          * TODO:
-         * We could avoid all these ifs if we created a class for each of these validations and used polymorphism.
+         * We could avoid all these ifs case it was created a class for each one of these validations and to apply polymorphism.
          * But unfortunately due to insufficient time to complete the test, I didn't do it
          * */
 
